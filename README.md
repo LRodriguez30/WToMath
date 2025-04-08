@@ -11,5 +11,5 @@ WToMath es una web sencilla para calcular las series de Maclaurin y Taylor con e
 NOTA IMPORTANTE:
 ---
 ### Carácteres tomados en cuenta:
-+ - * () ^ sin cos tan e
+Ej: + - * () ^ sin(x) cos(x) tan(x) e^x
 ---
