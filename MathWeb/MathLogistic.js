@@ -6,13 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
 function calculateMaclaurinExpression() {
     console.clear();
 
-    let functionDisplayError = document.getElementById("functionDisplayError");
     let derivativeDisplay = document.getElementById("derivativeDisplay");
     let evaluationDisplay = document.getElementById("evaluationDisplay");
     let serieDisplay = document.getElementById("serieDisplay");
     let functionDisplay = document.getElementById("functionDisplay");
-
-    functionDisplay.innerHTML = "";
 
     function clearFields() {
         if (functionDisplay.innerHTML) {
@@ -52,7 +49,8 @@ function calculateMaclaurinExpression() {
         mainFunction = math.parse(functionInput);
     }
     catch (e) {
-        functionDisplayError.innerHTML = "SYNTAX ERROR - The expression written is not supported by the calculator.";
+        clearFields();
+        alert("SYNTAX ERROR - La expresión escrita no es válida para la calculadora..");
         return;
     }
 
@@ -63,8 +61,8 @@ function calculateMaclaurinExpression() {
         katex.render(latex, functionDisplay);
     }
     catch (e) {
-        functionDisplayError.innerHTML = "SYNTAX ERROR - The expression written is not supported by the calculator.";
         clearFields();
+        alert("SYNTAX ERROR - La expresión escrita no es válida para la calculadora..");
         return;
     }
 
@@ -72,8 +70,8 @@ function calculateMaclaurinExpression() {
         latex = `{f(0)} = ${math.evaluate(String(mainFunction), { x:0 })}`;
     }
     catch (e) {
-        functionDisplayError.innerHTML = "MATH ERROR - Is not possible to evaluate the written expression.";
         clearFields();
+        alert("MATH ERROR - No es posible evaluar la expresión.");
         return;
     }
 
@@ -81,8 +79,8 @@ function calculateMaclaurinExpression() {
         katex.render(latex, functionEvaluationDisplay);
     }
     catch (e) {
-        functionDisplayError.innerHTML = "SYNTAX ERROR - The expression written is not supported by the calculator";
         clearFields();
+        alert("SYNTAX ERROR - La expresión escrita no es válida para la calculadora.");
         return;
     }
 
@@ -92,8 +90,8 @@ function calculateMaclaurinExpression() {
         derivative = math.derivative(mainFunction, 'x');
     }
     catch (e) {
-        functionDisplayError.innerHTML = "MATH ERROR - Is not possible to derivate the written expression.";
         clearFields();
+        alert("MATH ERROR - No es posible derivar la expresión.");
         return;
     }
 
@@ -118,8 +116,8 @@ function calculateMaclaurinExpression() {
         katex.render(latex, evaluationBox);
     }
     catch (e) {
-        functionDisplayError.innerHTML = "SYNTAX ERROR - The expression written is not supported by the calculator.";
         clearFields();
+        alert("SYNTAX ERROR - La expresión escrita no es válida para la calculadora.");
         return;
     }
 
@@ -137,8 +135,8 @@ function calculateMaclaurinExpression() {
         katex.render(MaclaurinSeries, MaclaurinBox);
     }
     catch (e) {
-        functionDisplayError.innerHTML = "SYNTAX ERROR - The expression written is not supported by the calculator.";
         clearFields();
+        alert("SYNTAX ERROR - La expresión escrita no es válida para la calculadora.");
         return;
     }
 
@@ -159,8 +157,8 @@ function calculateMaclaurinExpression() {
                 katex.render(latex, derivativeBox);
             }
             catch (e) {
-                functionDisplayError.innerHTML = "SYNTAX ERROR - The expression written is not supported by the calculator.";
                 clearFields();
+                alert("SYNTAX ERROR - La expresión escrita no es válida para la calculadora.");
                 return;
             }
 
@@ -170,8 +168,8 @@ function calculateMaclaurinExpression() {
                 derivativeEvaluation = math.evaluate(String(derivative), { x:0 });
             }
             catch (e) {
-                functionDisplayError.innerHTML = "MATH ERROR - Is not possible to derivate the written expression.";
                 clearFields();
+                alert("MATH ERROR - La expresión escrita no es válida para la calculadora.");
                 return;
             }
 
@@ -183,8 +181,8 @@ function calculateMaclaurinExpression() {
                 katex.render(latex, evaluationBox);
             }
             catch (e) {
-                functionDisplayError.innerHTML = "SYNTAX ERROR - The expression written is not supported by the calculator.";
                 clearFields();
+                alert("SYNTAX ERROR - La expresión escrita no es válida para la calculadora.");
                 return;
             }
 
@@ -198,8 +196,8 @@ function calculateMaclaurinExpression() {
                 katex.render(MaclaurinSeries, MaclaurinBox);
             }
             catch (e) {
-                functionDisplayError.innerHTML = "SYNTAX ERROR - The expression written is not supported by the calculator.";
                 clearFields();
+                alert("La expresión escrita no es válida para la calculadora.");
                 return;
             }
 
@@ -222,13 +220,10 @@ function calculateMaclaurinExpression() {
 function calculateTaylorExpression() {
     console.clear();
 
-    let functionDisplayError = document.getElementById("functionDisplayError");
     let derivativeDisplay = document.getElementById("derivativeDisplay");
     let evaluationDisplay = document.getElementById("evaluationDisplay");
     let serieDisplay = document.getElementById("serieDisplay");
     let functionDisplay = document.getElementById("functionDisplay");
-
-    functionDisplay.innerHTML = "";
 
     function clearFields() {
         if (functionDisplay.innerHTML) {
@@ -269,7 +264,8 @@ function calculateTaylorExpression() {
         mainFunction = math.parse(functionInput);
     }
     catch (e) {
-        functionDisplayError.innerHTML = "SYNTAX ERROR - The expression written is not supported by the calculator.";
+        clearFields();
+        alert("SYNTAX ERROR - La expresión escrita no es válida para la calculadora.");
         return;
     }
 
@@ -280,8 +276,8 @@ function calculateTaylorExpression() {
         katex.render(latex, functionDisplay);
     }
     catch (e) {
-        functionDisplayError.innerHTML = "SYNTAX ERROR - The expression written is not supported by the calculator.";
         clearFields();
+        alert("SYNTAX ERROR - La expresión escrita no es válida para la calculadora.");
         return;
     }
 
@@ -289,8 +285,8 @@ function calculateTaylorExpression() {
         latex = `{f(0)} = ${math.evaluate(String(mainFunction), { x:0 })}`;
     }
     catch (e) {
-        functionDisplayError.innerHTML = "MATH ERROR - Is not possible to evaluate the written expression.";
         clearFields();
+        alert("MATH ERROR - No es posible evaluar la expresión.");
         return;
     }
 
@@ -298,8 +294,8 @@ function calculateTaylorExpression() {
         katex.render(latex, functionEvaluationDisplay);
     }
     catch (e) {
-        functionDisplayError.innerHTML = "SYNTAX ERROR - The expression written is not supported by the calculator";
         clearFields();
+        alert("SYNTAX ERROR - La expresión escrita no es válida para la calculadora.");
         return;
     }
 
@@ -309,8 +305,8 @@ function calculateTaylorExpression() {
         derivative = math.derivative(mainFunction, 'x');
     }
     catch (e) {
-        functionDisplayError.innerHTML = "MATH ERROR - Is not possible to derivate the written expression.";
         clearFields();
+        alert("MATH ERROR - No es posible derivar la expresión.");
         return;
     }
 
@@ -376,8 +372,8 @@ function calculateTaylorExpression() {
                 katex.render(latex, derivativeBox);
             }
             catch (e) {
-                functionDisplayError.innerHTML = "SYNTAX ERROR - The expression written is not supported by the calculator.";
                 clearFields();
+                alert("SYNTAX ERROR - The expression written is not supported by the calculator.");
                 return;
             }
 
@@ -387,8 +383,8 @@ function calculateTaylorExpression() {
                 derivativeEvaluation = math.evaluate(String(derivative), { x:0 });
             }
             catch (e) {
-                functionDisplayError.innerHTML = "MATH ERROR - Is not possible to derivate the written expression.";
                 clearFields();
+                alert("MATH ERROR - Is not possible to derivate the written expression.");
                 return;
             }
 
@@ -400,8 +396,8 @@ function calculateTaylorExpression() {
                 katex.render(latex, evaluationBox);
             }
             catch (e) {
-                functionDisplayError.innerHTML = "SYNTAX ERROR - The expression written is not supported by the calculator.";
                 clearFields();
+                alert("SYNTAX ERROR - The expression written is not supported by the calculator.");
                 return;
             }
 
@@ -415,8 +411,8 @@ function calculateTaylorExpression() {
                 katex.render(TaylorSeries, TaylorBox);
             }
             catch (e) {
-                functionDisplayError.innerHTML = "SYNTAX ERROR - The expression written is not supported by the calculator.";
                 clearFields();
+                alert("SYNTAX ERROR - The expression written is not supported by the calculator.");
                 return;
             }
 
@@ -476,9 +472,6 @@ function loadDemo() {
     form.appendChild(buttonMaclaurin);
     form.appendChild(buttonTaylor);
 
-    const errorDiv = document.createElement("div");
-    errorDiv.id = "functionDisplayError";
-
     const calcBox = document.createElement("div");
     calcBox.id = "MaclaurinCalcBx";
 
@@ -509,7 +502,6 @@ function loadDemo() {
     calcBox.appendChild(serieDisplay);
 
     document.getElementById("Field").appendChild(form);
-    document.getElementById("mathContainer").appendChild(errorDiv);
     document.getElementById("mathContainer").appendChild(calcBox);
 
     document.getElementById("mathForm").addEventListener("submit", (e) => {
