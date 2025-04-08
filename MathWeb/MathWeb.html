@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Math.js CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjs@11/lib/browser/math.js"></script>
+
+        <!-- KaTeX CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+
+        <script src="MathLogistic.js"></script>
+        <script src="Loader.js"></script>
+
+        <link rel="stylesheet" href="WebStyle.css">
+        <link rel="icon" type="image/png" href="WToMath.png">
+
+        <title>WToMath</title>
+    </head>
+    <body>
+        <div id="mainContainer">
+            <nav id="side-navbar">
+                <div id="image">
+                    <img src="WToMath.png" alt="WebToMath" id="logo">
+                </div>
+                <div id="nav-links">
+                    <div id="btnDemo" onclick="loadDemo()">Demo</div>
+                    <div id="btnFunc">Funciones y Sintaxis</div>
+                </div>
+            </nav>
+            <div id="side-navbar-space"></div>
+            <div id="mainMathContainer">
+                <div id="mathContainer">
+                    <div id="lblTitle">
+                        <div id="Title">Calculadora de Series</div>
+                    </div>
+                    <div id="txtField">
+                        <div id="Field"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
